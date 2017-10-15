@@ -4,9 +4,10 @@ import Game from './classes/Game';
 let game;
 
 const setup = () => {
-  game = new Game(document.getElementById('play-field'));
-  document.getElementById('restart').addEventListener('click', game.resetField);
-
+  game = new Game(
+    document.getElementById('play-field'),
+    document.getElementById('scoreboard')
+  );
 };
 
 document.body.onload = setup;

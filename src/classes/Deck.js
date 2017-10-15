@@ -2,11 +2,17 @@ import { cardTypes } from '../utils/const';
 import { shuffle } from '../utils';
 
 export default class Deck {
-  constructor() {
+  constructor({incrementMoves}) {
+    this.incrementMoves = incrementMoves;
     this.cards = this.newCardList(cardTypes);
   }
 
-  onClick = ({target}) => target.className += ' open show';
+  onClick = ({target}) => {
+    if(target.className === 'card') {
+      target.className += ' open show';
+      this.incrementMoves();
+    }
+  }
 
   createCard = type => {
     const newCard = document.createElement('i');
