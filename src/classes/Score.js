@@ -18,6 +18,8 @@ export default class Score {
 
   startClock = () => this.clock = window.setInterval(this.updateTimer, 1000);
 
+  stopClock = () => window.clearInterval(this.clock);
+
   updateTimer = () => {
     const elapsed = Math.floor((Date.now()-this.startTime)/1000);
     let minutes = Math.floor(elapsed/60);

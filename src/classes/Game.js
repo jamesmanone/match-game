@@ -21,6 +21,7 @@ export default class Game {
   }
 
   win = () => {
+    this.score.stopClock();
     const stars = this.score.moveCount < 16 ? 3 :
       this.score.moveCount < 32 ? 2 : 1;
     const time = this.score.timer.innerText;

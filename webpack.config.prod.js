@@ -44,7 +44,8 @@ module.exports = {
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
       {test: /\.(woff|woff2)$/, loader: 'file-loader'},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
-      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'}
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
+      {test: /\.png$/, loader: 'file-loader'}
     ]
   }
 };
