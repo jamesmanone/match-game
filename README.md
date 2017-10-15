@@ -1,20 +1,22 @@
-# Memory Game Project
-
-## Table of Contents
-
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+# Memory Game
+## Introduction
+Memory game is a simple javascript game for matching cards. Players can select two cards, attempting to match the icons. If the icons match they remain face up, else they will flip back over. The player wins when all cards are matched.
+## Attribution
+Much of the css for this game came directly from the Udacity project starter repository.
+## Installation
+Installation is simple! Just open a bash prompt to the directory where you want to save the project and enter the following commands:
+```bash
+$ git clone https://github.com/jamesmanone/match-game.git
+$ cd match-game
+$ yarn install  # npm can be substituted for all yarn commands
+```
+## Starting the dev server
+```bash
+$ yarn start
+```
+It's that easy!
+## Exporting production bundle
+If you want to build a deployment ready bundle that is also quite easy:
+```bash
+$ yarn run build
+```
