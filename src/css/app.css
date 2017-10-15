@@ -88,7 +88,7 @@ h1 {
 .score-panel {
   position: relative;
   text-align: left;
-  width: 345px;
+  width: 400px;
   margin-bottom: 10px;
 }
 
@@ -113,6 +113,9 @@ h1 {
   position: absolute;
   left: 0;
   right: 0;
+  top: -3px;
   text-align: center;
   z-index: -1;
+  font-weight: bold;
+  font-size: 1.3em;
 }

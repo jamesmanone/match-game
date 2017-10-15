@@ -4,7 +4,7 @@ import Score from './Score';
 export default class Game {
   constructor(field, scoreboard) {
     this.score = new Score(scoreboard, this);
-    this.deck = new Deck(this.score);
+    this.deck = new Deck(this.score, this.win);
     this.field = field;
     this.resetField();
   }
@@ -16,5 +16,9 @@ export default class Game {
     while(field.childNodes.length) field.lastChild.remove();
     deck.addToDom(field);
     score.reset();
+  }
+
+  win = () => {
+    this.resetField();
   }
 }

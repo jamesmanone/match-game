@@ -1,13 +1,10 @@
 
 export default class Score {
-  constructor(board, game) {
+  constructor(board, {resetField}) {
     this.stars = board.getElementsByClassName('stars')[0];
     this.moves = board.getElementsByClassName('moves')[0];
     this.timer = board.getElementsByClassName('timer')[0];
-    board.getElementsByClassName('restart')[0].addEventListener(
-      'click',
-      game.resetField
-    );
+    board.getElementsByClassName('restart')[0].addEventListener('click', resetField);
     this.moveCount = 0;
     this.startTime = Date.now();
     this.clock;
@@ -15,8 +12,8 @@ export default class Score {
 
   incrementMoves = () => {
     this.moves.innerText = ++this.moveCount;
-    if(this.moveCount === 20) this.removeStar();
-    else if(this.moveCount === 30) this.removeStar();
+    if(this.moveCount === 25) this.removeStar();
+    else if(this.moveCount === 45) this.removeStar();
   }
 
   startClock = () => this.clock = window.setInterval(this.updateTimer, 1000);
@@ -30,7 +27,7 @@ export default class Score {
     this.timer.innerText = `${minutes}:${seconds}`;
   }
 
-  removeStar = () => this.stars.lastChild.remove();
+  removeStar = () => this.stars.getElementsByClassName('fa')[0].remove();
 
   star = () => {
     const icon = document.createElement('i');
