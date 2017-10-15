@@ -12,8 +12,8 @@ export default class Score {
 
   incrementMoves = () => {
     this.moves.innerText = ++this.moveCount;
-    if(this.moveCount === 25) this.removeStar();
-    else if(this.moveCount === 45) this.removeStar();
+    if(this.moveCount === 16) this.removeStar();
+    else if(this.moveCount === 32) this.removeStar();
   }
 
   startClock = () => this.clock = window.setInterval(this.updateTimer, 1000);

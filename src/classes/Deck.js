@@ -12,7 +12,7 @@ export default class Deck {
   }
 
   onClick = ({target}) => {
-    if(this.noMatch) return;
+    if(this.noMatch) return;  // No cheating!
     if(target.className === 'card') {
       this.openCards.push(target);
       target.className += ' open show';
@@ -25,6 +25,7 @@ export default class Deck {
         if(this.matchedCards.length === this.cards.length) this.win();
       } else if(this.openCards.length > 1) {  // no match but open card
         this.noMatch = true;
+        this.openCards.forEach(card => card.className += ' wrong');
         window.setTimeout(this.resetOpenCards, 1000);
         this.incrementMoves();
       }
@@ -59,8 +60,7 @@ export default class Deck {
   }
 
   addToDom = field => {
-    const { cards } = this;
-    for(let i=cards.length;i--;) field.appendChild(cards[i]);
+    for(let card of this.cards) field.appendChild(card);
   }
 
   shuffle = () => {

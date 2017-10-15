@@ -63,6 +63,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transition-duration: .25s;
 }
 
 .deck .card.open {
@@ -81,6 +82,10 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.wrong {
+  background: darkred;
+}
+
 /*
  * Styles for the Score Panel
  */
@@ -92,14 +97,14 @@ h1 {
   margin-bottom: 10px;
 }
 
-.score-panel .stars {
+.stars {
   margin: 0;
   padding: 0;
   display: inline-block;
   margin: 0 5px 0 0;
 }
 
-.score-panel .stars li {
+.stars li {
   list-style: none;
   display: inline-block;
 }
@@ -119,3 +124,44 @@ h1 {
   font-weight: bold;
   font-size: 1.3em;
 }
+
+/*
+ * Styles for win modal
+ */
+
+ .win-modal {
+   z-index: 10;
+   position: absolute;
+   top: -90px;
+   padding: 20px;
+   margin: 10%;
+   height: 75%;
+   width: 75%;
+   border: 3px solid #aaa;
+   background-color: #eee;
+   background: linear-gradient(135deg, #ccc, #fff 60%, #bbb);
+   padding: 15px;
+   border-radius: 30px;
+   box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.2);
+   text-align: center;
+ }
+
+ .win-modal .time {
+  display: block;
+  line-height: 2.5em;
+ }
+
+ .win-modal .message {
+   text-align: center;
+   width: 100%;
+ }
+
+ .win-modal .stars {
+   display: block;
+   line-height: 2.5em;
+ }
+
+ .win-modal .restart {
+   display: block;
+   line-height: 2.5em;
+ }
