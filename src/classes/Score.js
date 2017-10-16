@@ -42,7 +42,9 @@ export default class Score {
   reset = () => {
     this.moveCount = 0;
     this.moves.innerText = this.moveCount;
-    while(this.stars.childNodes.length < 3) this.stars.appendChild(this.star());
+    this.stars.innerHTML = '';
+    let stars = 3;
+    while(stars--) this.stars.appendChild(this.star());
     this.startTime = Date.now();
     if(this.clock) window.clearInterval(this.clock);
     this.updateTimer();
